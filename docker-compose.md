@@ -1,41 +1,42 @@
-# Install No Code Architect Toolkit with Docker
+# Instalar Ciberfobia API con Docker
 
-Installation of No Code Architect Toolkit with Docker offers the following advantages:
-- Install No Code Architect Toolkit in a clean environment.
-- Simplify the setup process.
-- Avoid compatibility issues across different operating systems with Docker's consistent environment.
+La instalación de Ciberfobia API con Docker ofrece las siguientes ventajas:
 
-> **Info**  
-> If your domain/subdomain is already pointed to the server, start at step 2.  
-> If you have already installed Docker and Docker-Compose, start at step 3.
+* Instalar Ciberfobia API en un entorno limpio.
+* Simplificar el proceso de configuración.
+* Evitar problemas de compatibilidad entre diferentes sistemas operativos con el entorno consistente de Docker.
 
----
-
-## 1. DNS Setup
-
-Point your domain/subdomain to the server. Add an A record to route the domain/subdomain accordingly:
-
-- **Type**: A  
-- **Name**: The desired domain/subdomain  
-- **IP Address**: `<IP_OF_YOUR_SERVER>`  
+> **Info**
+> Si tu dominio/subdominio ya está apuntando al servidor, comienza en el paso 2.
+> Si ya tienes instalado Docker y Docker-Compose, comienza en el paso 3.
 
 ---
 
-## 2. Install Docker
+## 1. Configuración de DNS
 
-This can vary depending on the Linux distribution used. Below are instructions for Ubuntu:
+Apunta tu dominio/subdominio al servidor. Añade un registro A para redirigir el dominio/subdominio:
 
-### Set up Docker's APT Repository
+* **Type**: A
+* **Name**: El dominio/subdominio deseado
+* **IP Address**: `<IP_OF_YOUR_SERVER>`
+
+---
+
+## 2. Instalar Docker
+
+Esto puede variar dependiendo de la distribución de Linux utilizada. A continuación, las instrucciones para Ubuntu:
+
+### Configurar el repositorio APT de Docker
 
 ```bash
-# Add Docker's official GPG key:
+# Añadir la clave GPG oficial de Docker:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# Add the repository to APT sources:
+# Añadir el repositorio a las fuentes de APT:
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
 $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
@@ -43,7 +44,7 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 ```
 
-### Install the Docker Packages
+### Instalar los paquetes de Docker
 
 ```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -51,12 +52,13 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ---
 
-## 3. Create Docker Compose File
+## 3. Crear archivo Docker Compose
 
-Create a `docker-compose.yml` file and paste the following configuration:
+Crea un archivo `docker-compose.yml` y pega la siguiente configuración:
 
-### With SSL Support
-Enables SSL/TLS for secure, encrypted communications. Ideal for those wanting a hands-off approach to SSL setup.
+### Con soporte SSL
+
+Habilita SSL/TLS para comunicaciones seguras y encriptadas. Ideal para quienes quieren un enfoque automático con SSL.
 
 ```yaml
 services:
@@ -82,7 +84,7 @@ services:
       - traefik_data:/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock:ro
   ncat:
-    image: stephengpope/no-code-architects-toolkit:latest
+    image: ciberfobia/ciberfobia-api:latest
     env_file:
       - .env
     labels:
@@ -107,32 +109,32 @@ volumes:
 
 ---
 
-## 4. Create `.env` File
+## 4. Crear archivo `.env`
 
-Create an `.env` file and configure it accordingly:
+Crea un archivo `.env` y configúralo de la siguiente manera:
 
 ```env
-# The name of your application.
-APP_NAME=NCAToolkit
+# El nombre de tu aplicación.
+APP_NAME=CiberfobiaAPI
 
-# Debug mode setting. Set to `false` for production environments.
+# Ajuste del modo de depuración. Ponlo en `false` para entornos de producción.
 APP_DEBUG=false
 
-# Your app's domain or subdomain, without the 'http://' or 'https://' prefix.
+# Dominio o subdominio de tu aplicación, sin 'http://' o 'https://'.
 APP_DOMAIN=example.com
 
-# Full application URL is automatically configured; no modification required.
+# La URL completa de la aplicación se configura automáticamente; no requiere modificación.
 APP_URL=https://${APP_DOMAIN}
 
-# SSL settings
+# Configuración SSL
 SSL_EMAIL=user@example.com
 
 # API_KEY
-# Purpose: Used for API authentication.
-# Requirement: Mandatory.
+# Propósito: Usada para autenticación de la API.
+# Requisito: Obligatorio.
 API_KEY=your_api_key_here
 
-# s3 Compatible Storage Env Vars
+# Variables de entorno de almacenamiento compatible con s3
 #
 #S3_ACCESS_KEY=your_access_key
 #S3_SECRET_KEY=your_secret_key
@@ -141,52 +143,48 @@ API_KEY=your_api_key_here
 #S3_BUCKET_NAME=your-bucket-name
 
 
-# Google Cloud Storage Env Variables
+# Variables de entorno de Google Cloud Storage
 #
 # GCP_SA_CREDENTIALS
-# Purpose: The JSON credentials for the GCP Service Account.
-# Requirement: Mandatory if using GCP storage.
+# Propósito: Credenciales JSON de la cuenta de servicio de GCP.
+# Requisito: Obligatorio si usas almacenamiento GCP.
 #GCP_SA_CREDENTIALS=/path/to/your/gcp/service_account.json
 
 # GCP_BUCKET_NAME
-# Purpose: The name of the GCP storage bucket.
-# Requirement: Mandatory if using GCP storage.
+# Propósito: Nombre del bucket de almacenamiento en GCP.
+# Requisito: Obligatorio si usas almacenamiento GCP.
 #GCP_BUCKET_NAME=your_gcp_bucket_name
 
 # STORAGE_PATH
-# Purpose: The base path for storage operations.
-# Default: GCP
-# Requirement: Optional.
+# Propósito: Ruta base para operaciones de almacenamiento.
+# Valor por defecto: GCP
+# Requisito: Opcional.
 #STORAGE_PATH=GCP
-
 ```
 
 ---
 
-## 5. Start Docker Compose
+## 5. Iniciar Docker Compose
 
-Start No Code Architect Toolkit  using the following command:
+Inicia Ciberfobia API con el siguiente comando:
 
 ```bash
 docker compose up -d
 ```
 
-To view logs in real time:
+Para ver los logs en tiempo real:
 
 ```bash
 docker compose logs -f
 ```
 
-To stop the containers:
+Para detener los contenedores:
 
 ```bash
 docker compose stop
 ```
 
-To restart and reload env vars
-
-# First update your .env file with the correct values
-# Then run:
+Para reiniciar y recargar variables del `.env`:
 
 ```bash
 docker compose up -d --force-recreate ncat
@@ -194,7 +192,7 @@ docker compose up -d --force-recreate ncat
 
 ---
 
-## 6. Done
+## 6. Finalizado
 
-No Code Architect Toolkit is now accessible through the specified APP_URL. For example:  
-[https://example.com](https://example.com)
+Ciberfobia API ahora está accesible a través de la APP\_URL especificada. 
+Por ejemplo: [https://example.com](https://example.com)
