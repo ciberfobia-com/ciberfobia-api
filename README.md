@@ -71,7 +71,7 @@ Cada endpoint incluye validación robusta de payloads y documentación detallada
 
   * Convierte archivos multimedia de un formato a otro con opciones de códecs.
 
-* **[`/v1/media/convert/mp3`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/transform/media_to_mp3.md)**
+* **[`/v1/media/convert/mp3`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/convert/media_to_mp3.md)**
 
   * Convierte distintos formatos a MP3.
 
@@ -83,7 +83,7 @@ Cada endpoint incluye validación robusta de payloads y documentación detallada
 
   * Interfaz web para recoger y mostrar feedback sobre medios.
 
-* **[`/v1/media/transcribe`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/transcribe.md)**
+* **[`/v1/media/transcribe`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/media_transcribe.md)**
 
   * Transcribe o traduce contenido de audio/vídeo desde una URL.
 
