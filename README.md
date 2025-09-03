@@ -1,4 +1,4 @@
-![Logo Original Ciberfobia](https://raw.githubusercontent.com/ciberfobia-com/ciberfobia-api/main/assets/ciberfobia-logo.png)
+<img src="https://raw.githubusercontent.com/ciberfobia-com/ciberfobia-api/main/assets/ciberfobia-logo.png" alt="Logo Original Ciberfobia" width="200"/>
 
 # Ciberfobia API
 
