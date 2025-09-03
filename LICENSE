@@ -1,0 +1,69 @@
+Copyright (c) 2025 Ciberfobia
+
+LICENCIA PÚBLICA GENERAL DE GNU
+Versión 2, Junio 1991
+
+Copyright (C) 1989, 1991 Free Software Foundation, Inc., [https://fsf.org/](https://fsf.org/)
+
+Todos pueden copiar y distribuir copias íntegras de este documento de licencia, pero no está permitido modificarlo.
+
+---
+
+### Preámbulo
+
+La mayoría de licencias de software buscan restringir tu libertad de compartir y cambiar programas. La Licencia Pública General de GNU (GPL) garantiza tu libertad para compartir y cambiar software libre, asegurando que siga siendo libre para todos sus usuarios.
+
+Cuando hablamos de software libre, nos referimos a libertad, no a precio. La GPL asegura que puedas:
+
+* Distribuir copias del software (gratis o cobrando).
+* Acceder al código fuente.
+* Modificarlo y crear programas derivados.
+
+Para proteger estos derechos, se imponen condiciones que evitan que otros te los quiten o limiten. Si distribuyes el software (modificado o no), debes dar a los receptores los mismos derechos que tú tienes, junto con el código fuente y una copia de esta licencia.
+
+No existe garantía alguna: el software se entrega “TAL CUAL”.
+
+---
+
+### Condiciones básicas (resumen)
+
+1. Puedes copiar y distribuir copias del código fuente, siempre incluyendo aviso de copyright, exención de garantía y esta licencia.
+2. Puedes modificar el programa, pero cualquier trabajo derivado debe estar bajo esta misma licencia.
+3. Si distribuyes el programa en forma compilada, debes proporcionar también el código fuente o un medio para obtenerlo.
+4. No puedes imponer restricciones adicionales a los receptores.
+5. No hay obligación de aceptar la licencia, pero modificar o distribuir el software implica aceptarla.
+6. Cada redistribución otorga automáticamente una licencia bajo estos términos a los receptores.
+7. Si obligaciones legales te impiden cumplir con esta licencia, no puedes distribuir el programa.
+8. La Free Software Foundation puede publicar nuevas versiones de la GPL. Puedes elegir seguir esa versión o cualquiera posterior.
+
+---
+
+### Sin garantía
+
+El programa se distribuye **SIN NINGUNA GARANTÍA**, ni expresa ni implícita, incluyendo, pero no limitado a, garantías de comerciabilidad o adecuación a un propósito particular. El riesgo es completamente tuyo.
+
+En ningún caso los autores o distribuidores serán responsables de daños derivados del uso o incapacidad de uso del programa.
+
+---
+
+### Cómo aplicarla a tus programas
+
+Añade al inicio de cada archivo fuente:
+
+```
+Nombre del programa – breve descripción  
+Copyright (C) <año> <autor>
+
+Este programa es software libre: puedes redistribuirlo y/o modificarlo 
+bajo los términos de la Licencia Pública General de GNU, publicada por 
+la Free Software Foundation, ya sea en la versión 2 de la Licencia o, 
+a tu elección, cualquier versión posterior.
+
+Este programa se distribuye con la esperanza de que sea útil, 
+pero SIN NINGUNA GARANTÍA; sin incluso la garantía implícita de 
+COMERCIABILIDAD o ADECUACIÓN A UN PROPÓSITO PARTICULAR. 
+Consulta la Licencia Pública General de GNU para más detalles.
+
+Deberías haber recibido una copia de la Licencia Pública General de GNU 
+junto con este programa. Si no, consulta <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>.
+```

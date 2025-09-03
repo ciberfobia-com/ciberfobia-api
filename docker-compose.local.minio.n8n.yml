@@ -1,0 +1,79 @@
+services:
+  ncat:
+    build: .
+    env_file:
+      - .env.local.minio.n8n
+    ports:
+      - "8080:8080"
+    volumes:
+      - storage:/app/storage
+      - logs:/app/logs
+    restart: unless-stopped
+    depends_on:
+      - minio
+      - minio-init
+    networks:
+      - nca-network
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+    volumes:
+      - minio_data:/data
+    restart: unless-stopped
+    networks:
+      - nca-network
+
+  minio-init:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      /usr/bin/mc alias set myminio http://minio:9000 minioadmin minioadmin123;
+      /usr/bin/mc mb myminio/ciberfobia-api-local --ignore-existing;
+      /usr/bin/mc anonymous set public myminio/ciberfobia-api-local;
+      echo 'MinIO bucket ciberfobia-api-local created and configured as public';
+      "
+    networks:
+      - nca-network
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=UTC
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./local-files:/files
+    networks:
+      - nca-network
+
+volumes:
+  storage:
+    driver: local
+  logs:
+    driver: local
+  minio_data:
+    driver: local
+  n8n_data:
+    driver: local
+
+networks:
+  nca-network:
+    driver: bridge
