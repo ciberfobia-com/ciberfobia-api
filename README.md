@@ -1,4 +1,4 @@
-![Logo Original Ciberfobia](https://raw.githubusercontent.com/ciberfobia/ciberfobia-api/main/assets/ciberfobia-logo.png)
+![Logo Original Ciberfobia](https://raw.githubusercontent.com/ciberfobia-com/ciberfobia-api/main/assets/ciberfobia-logo.png)
 
 # Ciberfobia API
 
@@ -39,109 +39,109 @@ Cada endpoint incluye validación robusta de payloads y documentación detallada
 
 ### Audio
 
-* **[`/v1/audio/concatenate`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/audio/concatenate.md)**
+* **[`/v1/audio/concatenate`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/audio/concatenate.md)**
 
   * Combina varios archivos de audio en uno solo.
 
 ### Code
 
-* **[`/v1/code/execute/python`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/code/execute/execute_python.md)**
+* **[`/v1/code/execute/python`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/code/execute/execute_python.md)**
 
   * Ejecuta código Python de forma remota y devuelve el resultado.
 
 ### FFmpeg
 
-* **[`/v1/ffmpeg/compose`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/ffmpeg/ffmpeg_compose.md)**
+* **[`/v1/ffmpeg/compose`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/ffmpeg/ffmpeg_compose.md)**
 
   * Interfaz flexible de FFmpeg para procesamiento complejo de medios.
 
 ### Imagen
 
-* **[`/v1/image/convert/video`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/image/convert/image_to_video.md)**
+* **[`/v1/image/convert/video`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/image/convert/image_to_video.md)**
 
   * Convierte una imagen estática en vídeo con duración y efectos de zoom.
 
-* **[`/v1/image/screenshot/webpage`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/image/screenshot_webpage.md)**
+* **[`/v1/image/screenshot/webpage`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/image/screenshot_webpage.md)**
 
   * Captura pantallazos de páginas web con opciones avanzadas como viewport, emulación de dispositivos o inyección de HTML/CSS/JS.
 
 ### Media
 
-* **[`/v1/media/convert`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/convert/media_convert.md)**
+* **[`/v1/media/convert`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/convert/media_convert.md)**
 
   * Convierte archivos multimedia de un formato a otro con opciones de códecs.
 
-* **[`/v1/media/convert/mp3`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/transform/media_to_mp3.md)**
+* **[`/v1/media/convert/mp3`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/transform/media_to_mp3.md)**
 
   * Convierte distintos formatos a MP3.
 
-* **[`/v1/BETA/media/download`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/download.md)**
+* **[`/v1/BETA/media/download`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/download.md)**
 
   * Descarga contenido multimedia online con yt-dlp.
 
-* **[`/v1/media/feedback`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/feedback.md)**
+* **[`/v1/media/feedback`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/feedback.md)**
 
   * Interfaz web para recoger y mostrar feedback sobre medios.
 
-* **[`/v1/media/transcribe`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/transcribe.md)**
+* **[`/v1/media/transcribe`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/transcribe.md)**
 
   * Transcribe o traduce contenido de audio/vídeo desde una URL.
 
-* **[`/v1/media/silence`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/silence.md)**
+* **[`/v1/media/silence`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/silence.md)**
 
   * Detecta intervalos de silencio en un archivo multimedia.
 
-* **[`/v1/media/metadata`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/media/metadata.md)**
+* **[`/v1/media/metadata`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/media/metadata.md)**
 
   * Extrae metadatos completos de archivos multimedia (formatos, códecs, resolución, bitrates).
 
 ### S3
 
-* **[`/v1/s3/upload`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/s3/upload.md)**
+* **[`/v1/s3/upload`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/s3/upload.md)**
 
   * Sube archivos a S3 directamente desde una URL.
 
 ### Toolkit
 
-* **[`/v1/toolkit/authenticate`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/toolkit/authenticate.md)**
+* **[`/v1/toolkit/authenticate`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/toolkit/authenticate.md)**
 
   * Autenticación básica para validar API keys.
 
-* **[`/v1/toolkit/test`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/toolkit/test.md)**
+* **[`/v1/toolkit/test`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/toolkit/test.md)**
 
   * Verifica que la Ciberfobia API está correctamente instalada.
 
-* **[`/v1/toolkit/job/status`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/toolkit/job_status.md)**
+* **[`/v1/toolkit/job/status`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/toolkit/job_status.md)**
 
   * Obtiene el estado de un trabajo por su ID.
 
-* **[`/v1/toolkit/jobs/status`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/toolkit/jobs_status.md)**
+* **[`/v1/toolkit/jobs/status`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/toolkit/jobs_status.md)**
 
   * Obtiene el estado de todos los trabajos en un rango temporal.
 
 ### Vídeo
 
-* **[`/v1/video/caption`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/caption_video.md)**
+* **[`/v1/video/caption`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/caption_video.md)**
 
   * Añade subtítulos personalizables a vídeos.
 
-* **[`/v1/video/concatenate`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/concatenate.md)**
+* **[`/v1/video/concatenate`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/concatenate.md)**
 
   * Combina varios vídeos en uno solo.
 
-* **[`/v1/video/thumbnail`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/thumbnail.md)**
+* **[`/v1/video/thumbnail`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/thumbnail.md)**
 
   * Extrae un fotograma como miniatura de un vídeo.
 
-* **[`/v1/video/cut`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/cut.md)**
+* **[`/v1/video/cut`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/cut.md)**
 
   * Corta segmentos de un vídeo con opciones de codificación.
 
-* **[`/v1/video/split`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/split.md)**
+* **[`/v1/video/split`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/split.md)**
 
   * Divide un vídeo en segmentos según tiempos de inicio y fin.
 
-* **[`/v1/video/trim`](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/video/trim.md)**
+* **[`/v1/video/trim`](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/video/trim.md)**
 
   * Recorta un vídeo manteniendo solo entre un inicio y un fin.
 
@@ -253,19 +253,19 @@ docker run -d -p 8080:8080 \
 
 ### Digital Ocean
 
-* [Guía Digital Ocean](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/cloud-installation/do.md)
+* [Guía Digital Ocean](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/cloud-installation/do.md)
 
 ### Google Cloud Run
 
-* [Guía Google Cloud Run](https://github.com/ciberfobia/ciberfobia-api/blob/main/docs/cloud-installation/gcp.md)
+* [Guía Google Cloud Run](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docs/cloud-installation/gcp.md)
 
 ### Docker general
 
-* [Guía Docker Compose](https://github.com/ciberfobia/ciberfobia-api/blob/main/docker-compose.md)
+* [Guía Docker Compose](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docker-compose.md)
 
 ### Desarrollo local con MinIO y n8n
 
-* [Guía local MinIO + n8n](https://github.com/ciberfobia/ciberfobia-api/blob/main/docker-compose.local.minio.n8n.md)
+* [Guía local MinIO + n8n](https://github.com/ciberfobia-com/ciberfobia-api/blob/main/docker-compose.local.minio.n8n.md)
 
 ---
 
